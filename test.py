@@ -63,7 +63,7 @@ if __name__ == '__main__':
         model = model.cuda()
     print('loading pretrained model from {0}'.format(crnn_model_path))
     # 导入已经训练好的crnn模型
-    model.load_state_dict(torch.load(crnn_model_path))
+    model.load_state_dict(torch.load(crnn_model_path, map_location='cpu'))
     
     started = time.time()
     ## read an image
